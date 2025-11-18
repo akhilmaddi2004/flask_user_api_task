@@ -1,65 +1,67 @@
-### Flask REST API – User Management
+## 🚀 Flask REST API – User Management
 
-This project is the solution for Task 4 of the Python Developer Internship at Elevate Labs.
-The goal was to build a simple REST API using Flask that can manage user data.
+Task 4 – Python Developer Internship (Elevate Labs)
 
-The API supports the following operations:
+This project is a REST API built using Flask.
+It manages user data using in-memory storage and supports all essential CRUD operations.
 
-- Create a user
-- Read all users
-- Read a user by ID
-- Update a user
-- Delete a user
+The goal of this task was to understand:
 
-Everything is stored in in-memory data during runtime.
+- 🔹 REST concepts
+- 🔹 HTTP methods
+- 🔹 Flask routing
+- 🔹 JSON handling
+- 🔹 API testing using browser + curl
 
-## 1. Project Structure
+## 📁 Project Structure
 
 /task4-flask-api
 │
-├── app.py
-├── requirements.txt
+├── app.py               # Main Flask application
+├── requirements.txt     # Dependencies
 
-## 2. How the API Works
+The project is intentionally simple because the task requires API fundamentals, not databases.
 
-The API uses a Python dictionary called users_db to store data while the server is running.
-Each user has:
+## 📌 Features Implemented
 
-- id
-- name
-- email
-- age
+- ✔ Create a user
+- ✔ Fetch all users
+- ✔ Fetch a user by ID
+- ✔ Update a user
+- ✔ Delete a user
+- ✔ JSON responses
+- ✔ Error handling for invalid IDs
 
-The application exposes REST routes to interact with this data.
+All operations are handled using a dictionary (users_db) that acts as temporary storage.
 
-## 3. Installation and Setup
+## 🛠 Installation & Setup
 
-# Step 1: Install dependencies
+1️⃣ Install dependencies
 
 - pip install -r requirements.txt
 
-# Step 2: Run the Flask app
+2️⃣ Run the Flask server
 
 - python app.py
 
-- The server will start at:
+3️⃣ API Base URL
 
 - http://127.0.0.1:5000/
 
-## 4. API Endpoints and Testing
+## 📡 API Endpoints & Testing Guide
 
-You can test this API using:
-- Browser (GET requests)
-- CMD curl commands (POST, PUT, DELETE)
-Below are all required tests.
+Below are all required API tests, exactly matching the task instructions.
 
-# A) Create a User (POST)
+🟦 1. Create User (POST)
+
+- Use CMD:
 
 curl -X POST http://127.0.0.1:5000/users ^
 -H "Content-Type: application/json" ^
--d "{\"name\":\"Akhil\", \"email\":\"akhil@test.com\", \"age\":22}"
+-d "{\"name\":\"Akhil\", 
+\"email\":\"akhil@test.com\", \"age\":22}"
 
-Response:
+- ✔ Expected Response:
 
 {
   "id": 1,
@@ -68,48 +70,53 @@ Response:
   "age": 22
 }
 
-# B) Get All Users (GET)
 
-- Open in browser:
+🟩 2. Get All Users (GET)
 
-http://127.0.0.1:5000/users
+- Open in your browser:
 
-# C) Get User by ID (GET)
+- http://127.0.0.1:5000/users
 
-- Open in browser:
+🟨 3. Get User by ID (GET)
 
-http://127.0.0.1:5000/users/1
+- http://127.0.0.1:5000/users/1
 
-# D) Update User (PUT)
+🟧 4. Update User (PUT)
 
 curl -X PUT http://127.0.0.1:5000/users/1 ^
 -H "Content-Type: application/json" ^
 -d "{\"name\":\"Akhil Updated\"}"
 
-## E) Delete User (DELETE)
+🟥 5. Delete User (DELETE)
 
 curl -X DELETE http://127.0.0.1:5000/users/1
 
-5. Key Concepts Used
+## 🧠 Key Concepts Learned
 
-- Flask framework
-- REST architecture
-- HTTP methods (GET, POST, PUT, DELETE)
-- Routing and request handling
-- JSON responses
-- In-memory data storage
+-- 🔹 REST Architecture
+- Stateless communication
+- Resource-based endpoints
 
-## 6. Outcome
+-- 🔹 HTTP Methods
+- GET → Retrieve
+- POST → Create
+- PUT → Update
+- DELETE → Remove
 
-This task builds a clear understanding of:
+-- 🔹 Flask Concepts
+- Routing with decorators
+- JSON request handling (request.json)
+- Returning JSON responses with proper status codes
 
-- How REST APIs work
-- How Flask routes process requests
-- How to send data using JSON
-- How CRUD operations work in backend development
+-- 🔹 API Testing
+- Browser for GET
+- curl commands for POST, PUT, DELETE
 
-This is a core skill for any Python backend developer.
+## 🎯 Outcome
 
----
-
-If you want, I can rewrite it shorter, more stylish, or more professional.
+This task builds a solid foundation in:
+- Backend development
+- API creation
+- Data handling
+- Practical Flask usage
+- CLI-based API testing
