@@ -15,10 +15,10 @@ The goal of this task was to understand:
 
 ## 📁 Project Structure
 
-/task4-flask-api
-│
-├── app.py               # Main Flask application
-├── requirements.txt     # Dependencies
+- /task4-flask-api
+- │
+- ├── app.py               # Main Flask application
+- ├── requirements.txt     # Dependencies
 
 The project is intentionally simple because the task requires API fundamentals, not databases.
 
